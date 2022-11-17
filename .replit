@@ -1,4 +1,5 @@
-run = "cowsay Configure me!"
+run = ["gcc -o laboratoire laboratoire.c"]
+
 
 [nix]
 channel = "stable-21_11"
