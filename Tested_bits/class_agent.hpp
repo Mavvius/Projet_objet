@@ -1,14 +1,15 @@
-
 #ifndef __CLASS_AGENT_HPP__
 #define __CLASS_AGENT_HPP__
 
-#include "class_localisation.hpp"
 #include "class_agent.hpp"
+#include "class_localisation.hpp"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <algorithm>
+
+using namespace std;
 
 class Agent{
     private:
@@ -45,7 +46,7 @@ class Agent{
         // méthode pour ajouter une localisation dans la liste des localisations
         void ajouterLocalisation(Localisation localisations); 
         // compte le la quantité dans une l
-        int qt(std::string loc);
+        int qt(string loc);
 
         std::string getNom();
         int getContagion();
@@ -79,5 +80,6 @@ class Agent{
 };
 
 Agent* nagent(std::string,int,int,int,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::vector<Localisation*>);
+//Agent* nagent(std::string,int,int,int,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string,std::string);
 
 #endif

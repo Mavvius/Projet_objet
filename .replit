@@ -1,4 +1,8 @@
-run = ["gcc -o laboratoire laboratoire.c"]
+
+#run = ["bash run.sh", "laboratoire.cpp"]
+run = "bash run.sh l*.cpp c*.cpp"
+
+# Setting environment variables
 
 
 [nix]

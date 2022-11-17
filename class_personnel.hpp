@@ -1,5 +1,5 @@
-#ifndef __READCSVFILE_H__
-#define __READCSVFILE_H__
+#ifndef __CLASS_PERSONNEL_H__
+#define __CLASS_PERSONNEL_H__
 
 class Personnel{
   protected:

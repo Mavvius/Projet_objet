@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-if (($# > 2)); then
+if (($# >= 2)); then
 	maincpp=$1
 	fichierC=${@:2}
 	nom_executable="labo"
@@ -12,7 +12,7 @@ if (($# > 2)); then
 	./$nom_executable
 	 
 else
-  echo $@
+	echo ${@:2}
 	echo "Pour que le run.sh fonctionne il faut le lancer de la sorte"
 	echo "    ./run.sh main.cpp <tous les autres .cpp>"
 fi

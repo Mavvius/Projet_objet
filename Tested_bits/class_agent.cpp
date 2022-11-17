@@ -1,5 +1,6 @@
 #include "class_agent.hpp"
 #include "class_localisation.hpp"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -47,8 +48,12 @@ void Agent::setImmunite(std::string immunite){
 void Agent::setPop_a_risque(std::string pop_a_risque){
     this->pop_a_risque = pop_a_risque;
 };
+void Agent::setLocalisations(std::vector<Localisation*> localisations){
+    this->localisations = localisations;
+};
 
-std::string Agent::getNom(){
+
+string Agent::getNom(){
     return nom;
 };
 int Agent::getContagion(){
@@ -86,6 +91,9 @@ std::string Agent::getImmunite(){
 }; 
 std::string Agent::getPop_a_risque(){
     return pop_a_risque;
+};
+std::vector<Localisation*> Agent::getLocalisations(){ 
+    return localisations;
 };
 
 //constructor
@@ -138,7 +146,7 @@ return new Agent(nom,contagion,incubation,group,type,reservoir,source,vecteur,tr
 
 // --------- Methods ---------//
 //void qt() {}; // format tableau
-int qt(string loc){
+/*int qt(string loc){
   vector <string> v = this localisations;
   match = find(v.begin(, v.end(), loc));
   
@@ -159,7 +167,8 @@ void qt(){
 	}
 };
 // ajouter une localisation dans la liste des localisations
-void Agent::ajouterLocalisation(Localisation localisations) {
+void ajouterLocalisation(Localisation localisations) {
      getLocalisations().push_back(localisations); 
     
   }
+*/
