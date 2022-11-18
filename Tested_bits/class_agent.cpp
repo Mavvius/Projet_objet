@@ -145,8 +145,8 @@ return new Agent(nom,contagion,incubation,group,type,reservoir,source,vecteur,tr
 };
 
 // --------- Methods ---------//
-//void qt() {}; // format tableau
-int Agent::qt(string loc){
+
+int Agent::qt(string loc){ // Fonction a améliorer, en utilisant un iterateur pour le match. 
 // parcourt le vecteur de localisation 
     std::vector<Localisation*> v = this->localisations;
 
