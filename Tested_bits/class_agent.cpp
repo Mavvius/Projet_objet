@@ -146,29 +146,36 @@ return new Agent(nom,contagion,incubation,group,type,reservoir,source,vecteur,tr
 
 // --------- Methods ---------//
 //void qt() {}; // format tableau
-/*int qt(string loc){
-  vector <string> v = this localisations;
-  match = find(v.begin(, v.end(), loc));
+int Agent::qt(string loc){
+// parcourt le vecteur de localisation 
+    std::vector<Localisation*> v = this->localisations;
+
+    for(auto localisation : v){
+       if (localisation->getName() == loc) { // cherche un match de nom
+        return localisation->getQt();  // S'il trouve renvoit la quantité a l'emplacement donné
+        }else{
+            cout << "No match for the this localisation";
+            
+        }
+    }
+    return 0;
+};
+   /* auto match = find(v->begin(), v->end(), loc);
   
-  if (match != v.end()){
+    if (match != v->end()){
    // there is a match
-    auto index = distance(v.begin(), match)
-    return v[index].qt
+    auto index = distance(v->begin(), match);
+    return v[index]->getQt();
   } else {
     cout << "There is no sample in this localisation ";
-  };
-  //localisation.get_qt();
-};
+  }*/
 
-void qt(){
-  vector<string> v = this localisation;
+// Affiche un tableau des localisations des agents et les quantité respective par localisation 
+void Agent::qt(){
+    std::vector<Localisation*> v = this->localisations;
+    cout <<"\n";
   	for(auto localisation : v){
-		cout << localisation.name << "|\t" << localisation.qt << "|\t" << localisation.type << "\n";
-	}
+       cout << localisation->getName() << "|\t" << localisation->getType() << "|" << localisation->getQt() << "\n";
+      
+    }
 };
-// ajouter une localisation dans la liste des localisations
-void ajouterLocalisation(Localisation localisations) {
-     getLocalisations().push_back(localisations); 
-    
-  }
-*/

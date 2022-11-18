@@ -151,9 +151,9 @@ int qt(string loc){
   };
   //localisation.get_qt();
 };
-
+// affiche la quantité 
 void qt(){
-  vector<string> v = this localisation;
+  vector<string> v = this localisations;
   	for(auto localisation : v){
 		cout << localisation.name << "|\t" << localisation.qt << "|\t" << localisation.type << "\n";
 	}
