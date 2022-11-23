@@ -1,0 +1,27 @@
+Les choses a faire :
+- Finir, importation des donnees
+    - Instanciation 
+- Menuing 
+  - Graphique 
+      Faire les différents menus, 
+  - Navigation 
+      Passage d'un menu a l'autre
+      Gestion des inputs
+
+Fonction obligatoire : 
+Agent::deplacer
+Agent::Detruire/Creer
+Personnel::supprimer
+
+Personnel::Droit
+
+Les choses Faites a tester :
+
+Personnel::afficher
+Personnel::Creer
+Agent::Deplacer
+
+
+
+Pour le rapport :
+Prévoir les modalité d'installation de lancement : Linux & Windows & Mac

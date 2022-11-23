@@ -155,7 +155,6 @@ int Agent::qt(string loc){ // Fonction a améliorer, en utilisant un iterateur p
         return localisation->getQt();  // S'il trouve renvoit la quantité a l'emplacement donné
         }else{
             cout << "No match for the this localisation";
-            
         }
     }
     return 0;
