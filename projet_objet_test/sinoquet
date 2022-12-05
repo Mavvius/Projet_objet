@@ -1,0 +1,16 @@
+FONCTION equilibre (a : TArbrebin):booleen
+	si (a==null) retourner faux finsi
+	si (a->droit == null) alors
+		si (a->gauche == null) alors retourner vrai
+		sinon retourner faux finsi
+	// a->droit != null
+	si (a->gauche == null) retourner faux
+	//a->droit != null et a->gauche != null
+	sinon 
+		equig <- equilibre(a->gauche)
+		equid <- equilibre(a->droite)
+
+		si !(equig ou equid) retourner faux
+		sinon retourner vrai
+		finsi
+	finsi
