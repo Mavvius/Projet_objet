@@ -13,7 +13,6 @@
 #include <vector>
 #include <algorithm>
 
-//class Laboratory;
 
 class Agent{
     private:
@@ -33,7 +32,7 @@ class Agent{
         std::string pop_a_risque;
 
         //Mapping quantity of agents per localisation  
-        std::map<const Localisation*, unsigned int> quantityPerLocalisation;
+        std::map<const Localisation*, unsigned int> _quantityPerLocalisation;
         Laboratory& laboratory;
 
     public:
@@ -65,8 +64,11 @@ class Agent{
         std::string getTraitement();
         std::string getImmunite();
         std::string getPop_a_risque();
+        const std::map<const Localisation*, unsigned int>& quantityPerLocalisation();
 
 
+
+        void show_loc();
 
         void set_quantity(const std::string& name, const std::string& type, unsigned int quantity);
         void print();

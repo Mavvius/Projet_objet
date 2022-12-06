@@ -52,60 +52,44 @@ void Agent::setPop_a_risque(std::string pop_a_risque){
     this->pop_a_risque = pop_a_risque;
 };
 
+std::string Agent::getNom(){return nom; };
 
+int Agent::getContagion(){return contagion;};
 
+int Agent::getIncubation(){return incubation;};
 
-std::string Agent::getNom(){
-    return nom;
-};
+int Agent::getGroup(){return group;};
 
-int Agent::getContagion(){
-    return contagion;
-};
-int Agent::getIncubation(){
-    return incubation;
-};
-int Agent::getGroup(){
-    return group;
-};
-std::string Agent::getType(){
-    return type;
-}; 
-std::string Agent::getReservoir(){
-    return reservoir;
-}; 
-std::string Agent::getSource(){
-    return source;
-}; 
-std::string Agent::getVecteur(){
-    return vecteur;
-}; 
-std::string Agent::getTransmission(){
-    return transmission;
-}; 
-std::string Agent::getDiagnostic(){
-    return diagnostic;
-}; 
-std::string Agent::getTraitement(){
-    return traitement;
-}; 
-std::string Agent::getImmunite(){
-    return immunite;
-}; 
-std::string Agent::getPop_a_risque(){
-    return pop_a_risque;
-};
+std::string Agent::getType(){return type;}; 
+
+std::string Agent::getReservoir(){return reservoir;}; 
+
+std::string Agent::getSource(){return source;}; 
+
+std::string Agent::getVecteur(){return vecteur;}; 
+
+std::string Agent::getTransmission(){return transmission;}; 
+
+std::string Agent::getDiagnostic(){return diagnostic;}; 
+
+std::string Agent::getTraitement(){return traitement;}; 
+
+std::string Agent::getImmunite(){return immunite;}; 
+
+std::string Agent::getPop_a_risque(){return pop_a_risque;};
+
+const std::map<const Localisation*, unsigned int>& Agent::quantityPerLocalisation(){return _quantityPerLocalisation;};
 
 void Agent::set_quantity(const std::string& name, const std::string& type, unsigned int quantity) {
-    quantityPerLocalisation[&laboratory.getLocalisation(name, type)] = quantity;
+    _quantityPerLocalisation[&laboratory.getLocalisation(name, type)] = quantity;
 };
 
 void Agent::print() {
-            for (const auto& [localisation, quantity] : quantityPerLocalisation) {
+            for (const auto& [localisation, quantity] : _quantityPerLocalisation) {
                 assert(localisation != nullptr);
                 std::cout << "Agent "
                           << this->nom
-                          << " as "
+                          << " has "
                           << quantity
                           << " in "
                           << localisation->name()
@@ -116,56 +100,12 @@ void Agent::print() {
             }
         };
 
-
-//constructor
-/*Agent::Agent(   std::string nom,
-                int contagion,
-                int incubation,
-                int group,
-                std::string type,
-                std::string reservoir,
-                std::string source,
-                std::string vecteur,
-                std::string transmission,
-                std::string diagnostic,
-                std::string traitement,
-                std::string immunite,
-                std::string pop_a_risque,
-                std::vector<Localisation*> localisations){
-                    this->setNom(nom);
-                    this->setContagion(contagion);
-                    this->setIncubation(incubation);
-                    this->setGroup(group);
-                    this->setType(type);
-                    this->setReservoir(reservoir);
-                    this->setSource(source);
-                    this->setVecteur(vecteur);
-                    this->setTransmission(transmission);
-                    this->setDiagnostic(diagnostic);
-                    this->setTraitement(traitement);
-                    this->setImmunite(immunite);
-                    this->setPop_a_risque(pop_a_risque);
-                    this->setLocalisations(localisations);
+void Agent::show_loc(){
+    for (const auto& loc : _quantityPerLocalisation)
+    {
+        std::cout << loc.first->name() << ": " << loc.first->type() << ": " << loc.second << "\n";
+    }
 };
-*/
-//instanciation
-/*Agent* nagent(std::string nom,
-              int contagion,
-              int incubation,
-              int group,
-              std::string type,
-              std::string reservoir,
-              std::string source,
-              std::string vecteur,
-              std::string transmission,
-              std::string diagnostic,
-              std::string traitement,
-              std::string immunite,
-              std::string pop_a_risque,
-              vector<Localisation*> localisations){
-return new Agent(nom,contagion,incubation,group,type,reservoir,source,vecteur,transmission,diagnostic,traitement,immunite,pop_a_risque,localisations);
-};*/
-
 
 
 // --------- Methods ---------//
